@@ -1,3 +1,4 @@
+#import csv and os
 import csv
 import os
 # assign a variable for the file to load and the path
@@ -59,6 +60,7 @@ with open(file_to_load) as election_data:
             f"------------------------------\n"
         )
         print(election_results, end = " ")
+        # write text file
         txt_file.write(election_results)
             #iterate through candidate votes
         for candidate_name in candidate_votes:

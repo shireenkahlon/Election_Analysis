@@ -50,59 +50,72 @@ with open(file_to_load) as election_data:
             candidate_votes[candidate_name] = 0
         #track candidates votes
         candidate_votes[candidate_name] +=1
-        #iterate through candidate votes
-    for candidate_name in candidate_votes:
-        #retrieve votes
-        votes = candidate_votes[candidate_name]
-        percentage_votes = float(votes)/float(total_votes) * 100
-        print(f'{candidate_name} received {percentage_votes:.1f}% of the total votes')
-    # To do: print out each candidate's name, vote count, and percentage of
-        print(f'{candidate_name}: {percentage_votes:.1f}%, {votes}\n')
-    #Are votes bigger than winning votes?
-        if (votes > winning_count) and (percentage_votes > winning_percentage):
-            winning_count = votes
-            winning_percentage = percentage_votes
-            winning_candidate = candidate_name
-    winning_candidate_summary = (
-        f"----------------------\n"
-        f"The winning candidate is {winning_candidate}\n"
-        f"The winning candidate received {winning_percentage:.1f}% of the total votes\n"
-        f"The winning candidate received {winning_count} total votes\n"
-        f"Congratulations to the winner of the congressional race!\n"
-        f'-------------------\n'
-    )
-    print(winning_candidate_summary)
+#save the results to a text file
+    with open(file_to_save, "w") as txt_file:
+        election_results = (
+            f"\nElection Results\n"
+            f"---------------------\n"
+            f"Total Votes: {total_votes,}\n"
+            f"------------------------------\n"
+        )
+        print(election_results, end = " ")
+        txt_file.write(election_results)
+            #iterate through candidate votes
+        for candidate_name in candidate_votes:
+            #retrieve votes
+            votes = candidate_votes[candidate_name]
+            percentage_votes = float(votes)/float(total_votes) * 100
+            print(f'{candidate_name} received {percentage_votes:.1f}% of the total votes')
+            candidate_results = (f"{candidate_name} received {percentage_votes:.1f}% {(votes)}\n")
+            txt_file.write(candidate_results)
+        # To do: print out each candidate's name, vote count, and percentage of
+            print(f'{candidate_name}: {percentage_votes:.1f}%, {votes}\n')
+        #Are votes bigger than winning votes?
+            if (votes > winning_count) and (percentage_votes > winning_percentage):
+                winning_count = votes
+                winning_percentage = percentage_votes
+                winning_candidate = candidate_name
+        winning_candidate_summary = (
+            f"----------------------\n"
+            f"The winning candidate is {winning_candidate}\n"
+            f"The winning candidate received {winning_percentage:.1f}% of the total votes\n"
+            f"The winning candidate received {winning_count} total votes\n"
+            f"Congratulations to the winner of the congressional race!\n"
+            f'-------------------\n'
+        )
+        print(winning_candidate_summary)
+        txt_file.write(winning_candidate_summary)
+            
+
+
+        # print candidate options
+        print(candidate_options)
+        #print candidate_votes
+        print(candidate_votes)
+            
+        
+        # print row in csv vile
+        print(total_votes)
+        
         
 
-
-    # print candidate options
-    print(candidate_options)
-    #print candidate_votes
-    print(candidate_votes)
-        
-    
-    # print row in csv vile
-    print(total_votes)
-    
     
 
-  
 
-
-# close file
-# txt_file.close()
+    # close file
+    # txt_file.close()
 
 
 
 
 
-# Pseudocode
-# The data we need to retrieve
-# The total number of votes cast
-# A complete list of candidates who received votes
-# The percentage of votes each candidate won
-# The total number of votes each candidate won
-# The winner of the election based on popular votes
+    # Pseudocode
+    # The data we need to retrieve
+    # The total number of votes cast
+    # A complete list of candidates who received votes
+    # The percentage of votes each candidate won
+    # The total number of votes each candidate won
+    # The winner of the election based on popular votes
 
-#close file
+    #close file
 

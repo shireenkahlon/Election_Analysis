@@ -19,8 +19,17 @@ Denver county had the highest voter turnout with 306055 votes. I found this by c
 ![largest_county](https://github.com/shireenkahlon/Election_Analysis/blob/main/largest_county.png)
 
 ### Provide a breakdown of the number of votes and the percentage of the total votes each candidate received.
-I found Charles Casper Stockham received 85,213 or 23.0% of the total votes, Diana DeGette received 272,892 or 73.8% of the total votes, and Raymon Anthony Doane 11,606 received 3.1% of the total votes. I used a list (candidate_options) to hold the three candidates names and a dictionary (cadidate_votes) to hold the name as the key and the number of votes the candidate received as a value. I created a conditional statement to tally each vote per candidate by adding in the name of the candidate to a list and counting their votes; a for loop was used to find the percentage for each candidate. The code is as follows:
+Charles Casper Stockham received 85,213 or 23.0% of the total votes, Diana DeGette received 272,892 or 73.8% of the total votes, and Raymon Anthony Doane 11,606 received 3.1% of the total votes. I used a list (candidate_options) to hold the three candidates names and a dictionary (cadidate_votes) to hold the name as the key and the number of votes the candidate received as a value. I created a conditional statement to tally each vote per candidate by adding in the name of the candidate to a list and counting their votes; a for loop was used to find the percentage for each candidate. The code is as follows:
+![candidate_votes](https://github.com/shireenkahlon/Election_Analysis/blob/main/candidate_votes.png)
+Along with the following code:
+![Candidate_Percentage](https://github.com/shireenkahlon/Election_Analysis/blob/main/candidate_percentage.png)
 
+### Which candidate won the election, what was their vote count, and what was their percentage of the total votes?
+Diana DeGette won the election with 272,892 votes and 73.8% of the total votes. Variables for the winning candidate, percentage, and count were created and an if then statement finding the highest vote count and highest percentage was implemented. The code is as follows:
+![winning_candidate_screenshot](https://github.com/shireenkahlon/Election_Analysis/blob/main/winning_candidate_screenshot.png)
+
+## Election-Audit Summary
+This code can be used in various scenarios to help audit local, state legislature, U.S. House, and U.S. Senate races. This code worked within seconds to bring back results for this specific congressional race and thus, can be used for quick results for other races as well. To use this code for other races, a couple of things could be added. A line of code to connect the candidates to counties could be added (for example, hypothetically, Charles Casper Stockham received 85 votes in Jefferson county). Another way of improving the code for general use is by using with open() instead of os.path.join(). This way, it doesn’t matter what folder the analyst is currently in, but can open a file from the direct name of the file. Finally, one possible solution to confirm the vote is by creating variables and writing code to find out the vote based on party line. Most congressional and state legislature races are based on party line. By counting by party, this would be an extra confirmation of who won the race.
 
 
 
